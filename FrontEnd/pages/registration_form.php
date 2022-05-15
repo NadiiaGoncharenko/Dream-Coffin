@@ -14,8 +14,6 @@
 
 <div w3-include-html="../webstructure/menuleiste.php"> </div> <!-- damit html wird auch gelesen/hab kaput gemacht-->
 
-
-
 <div style="margin: auto;width: 60%;">
 	<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -65,7 +63,7 @@
 </div>
 </body>
 <script>
-includeHTML();
+	includeHTML();
 </script>
 
 </html>
