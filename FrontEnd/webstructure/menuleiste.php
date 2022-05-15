@@ -23,6 +23,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./registration_form.php">Registration</a>
                 </li>
+                
             
                 <?php endif ?>
 
@@ -80,6 +81,10 @@
                         <a class="nav-link" href="./login.php">Login</a>
                     </li>
                 <?php endif ?> 
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="search" placeholder="Search" name="search">
+                </div>
             </ul>
         </div>
     </nav>
