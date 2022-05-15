@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<title>Registration</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="../js/ajaxFkt.js"></script>
+	<script src="../js/ajaxFkt.js"></script>
+	<script src="../js/fkt.js"></script>
 </head>
+
 <body>
+
+<div w3-include-html="menuleiste.php"> </div>
+
+
+
+
 <div style="margin: auto;width: 60%;">
 	<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -50,7 +58,13 @@
 		</div>
 		
 		<input type="button" name="save" class="btn btn-primary" value="Save to database" id="butsave">
+
+
 	</form>
 </div>
 </body>
+<script>
+includeHTML();
+</script>
+
 </html>
