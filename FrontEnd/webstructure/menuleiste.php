@@ -82,10 +82,22 @@
                     </li>
                 <?php endif ?> 
 
-                <div class="form-group">
-                    <input type="text" class="form-control" id="search" placeholder="Search" name="search">
-                </div>
+                <!-- <div class="form-group">
+                    <input type="text" class="form-control" id="search"  title="Type in a category name="search">
+                    
+                </div> -->
+                <form>
+                    <input type="text" size="30" placeholder="Search..." onkeyup="showResult(this.value) onchange="showUser(this.value)">
+                    <div id="livesearch"></div>
+                    
+<div id="txtHint"><b>Person info will be listed here...</b></div>
+                </form>
             </ul>
         </div>
     </nav>
 </div>
+
+<script>
+	showResult();
+</script>
+
