@@ -1,9 +1,11 @@
 <?php
     include '../webstructure/head.php';
-?>
-    <title>Help page</title>
+  ?>
+   <title>Products</title>
 </head>
 <body>
-  <?php
-    include '../webstructure/menuleiste.php';
-  ?>
+<div w3-include-html="../webstructure/menuleiste.php"> </div> <!-- damit html wird auch gelesen/hab kaput gemacht-->
+
+
+
+<?php include "../webstructure/footer.php"; ?>

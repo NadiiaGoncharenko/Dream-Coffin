@@ -1,6 +1,6 @@
 <?php
     include '../webstructure/head.php';
-?>
+  ?>
     <title>Imprint</title>
 </head>
 <body>
@@ -34,4 +34,5 @@
         </div>
       </div><br>
 </div>
-    
+
+<?php include "../webstructure/footer.php"; ?>

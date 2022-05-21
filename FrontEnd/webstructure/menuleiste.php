@@ -19,6 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./helpsite.php">Help</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./warenkorb.php">Warenkorb</a>
+                </li>
                 <?php if(!isset($_SESSION["userID"])): ?>
                 <li class="nav-item">
                     <a class="nav-link" href="./registration_form.php">Registration</a>
@@ -29,7 +32,7 @@
 
             
                 <?php   #admin =1      # Different Menu for different Userrole
-                $_SESSION["userrole"] = 1; #simulation without DB
+                $_SESSION["userrole"] = 3; #simulation without DB
                 
                 if(isset($_SESSION["userrole"]) && $_SESSION["userrole"] == 1 ): ?> 
                     
@@ -49,6 +52,8 @@
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="./product.php">Create Product</a>
                             <a class="dropdown-item" href="./edit_products.php">Edit products</a>
+                            
+                            <a class="dropdown-item" href="./edit_user.php">Edit user</a>
                             <!-- <a class="dropdown-item" href="./all_products.php">All products</a> -->
                             <a class="dropdown-item" href="./invoices.php">All invoices</a>
                             <a class="dropdown-item" href="./invoice_detail.php">Invoice</a>
@@ -65,8 +70,11 @@
                         </a>
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="./editData.php?userID=<?php echo $_SESSION["userID"];?>">Edit Profile</a>
+                           <!-- //userID übergabe aus DB -->
                             <a class="dropdown-item" href="./all_orders_user.php">Your Orders</a>
                             <a class="dropdown-item" href="./all_invoices_user.php">Your Invoices</a>
+                            <a class="dropdown-item" href="./editData.php">Edit Profile</a>
+                            
                         </div>
                     </li>
 
@@ -87,17 +95,21 @@
                     
                 </div> -->
                 <form>
-                    <input type="text" size="30" placeholder="Search..." onkeyup="showResult(this.value) onchange="showUser(this.value)">
-                    <div id="livesearch"></div>
+                  <!--   <input type="text" size="30" autocomplete="off" placeholder="Search..." onchange="this.value">
+                     <div id="search"></div> -->
                     
-<div id="txtHint"><b>Person info will be listed here...</b></div>
+                
+                    <div class="search-box">
+                        <input type="text" size="30" autocomplete="off" placeholder="Search ..." />
+                        <div class="result"></div>
+                    </div>
                 </form>
             </ul>
         </div>
     </nav>
 </div>
+<!-- <script>
+	showResult(); //für Suche
+</script> -->
 
-<script>
-	showResult();
-</script>
 

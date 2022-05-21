@@ -1,5 +1,5 @@
 <?php
-    include '../webstructure/head.php';
+    include '/FrontEnd/webstructure/head.php';
 ?>
     <title>Help page</title>
 </head>

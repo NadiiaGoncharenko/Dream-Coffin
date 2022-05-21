@@ -11,9 +11,13 @@ var adresse = $('#adresse').val();
 var lname = $('#lname').val();
 var fname = $('#fname').val();
 var salutation = $('#salutation').val();
-if(username!="" && email!="" && password!="" && salutation!="" ){
+if(username!="" && email!="" && password!="" ){
+	
+	console.log($)
+	console.log($.ajax)
+
 	$.ajax({
-		url: "/BackEnd/logic/save.php",
+		url: "http://localhost/Dream-Coffin/BackEnd/logic/save.php",
 		type: "POST",
 		data: {
 			username: username,
@@ -29,7 +33,7 @@ if(username!="" && email!="" && password!="" && salutation!="" ){
 		cache: false,
 		success: function(dataResult){
 			console.log(dataResult);
-			var dataResult = JSON.parse(dataResult);
+			// var dataResult = JSON.parse(dataResult);
 			if(dataResult.statusCode==200){
 				$("#butsave").removeAttr("disabled");
 				$('#fupForm').find('input:text').val('');
@@ -39,7 +43,6 @@ if(username!="" && email!="" && password!="" && salutation!="" ){
 			else if(dataResult.statusCode==201){
 				alert("Error occured !");
 			}
-			
 		}
 	});
 	}

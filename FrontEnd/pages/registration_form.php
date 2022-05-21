@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Registration</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">    
-    <link rel="stylesheet" href="../res/css/style.css">
-	<script src="../js/ajaxFkt.js"></script>
-	<script src="../js/ajaxFkt.js"></script>
-	<script src="../js/fkt.js"></script>
+<?php
+    include '../webstructure/head.php';
+  ?>
 </head>
 
 <body>
-
-<div w3-include-html="../webstructure/menuleiste.php"> </div> <!-- damit html wird auch gelesen/hab kaput gemacht-->
-
+<?php $salutation=""; ?>
+<!-- //<div w3-include-html="../webstructure/menuleiste.php"> </div> damit html wird auch gelesen/hab kaput gemacht -->
+<?php
+    include '../webstructure/menuleiste.php';
+  ?>
 <div style="margin: auto;width: 60%;">
 	<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 	</div>
 	<form id="fupForm" name="form1" method="post">
+		<div class="form-group">
+			<label for="salutation">Salutation:</label>
+			<!-- <input type="text" class="form-control" id="salutation" placeholder="salutation" name="salutation"> -->
+			<select id="salutation" name="salutation" class="form-control">
+              <option  <?php if ($salutation=="Mrs.") {echo "selected"; }?>>Mrs.</option>
+              <option  <?php if ($salutation=="Ms.") {echo "selected"; }?>>Ms.</option>
+              <option  <?php if ($salutation=="Mr.") {echo "selected"; }?>>Mr.</option>
+            </select>
+        </div>
 		<div class="form-group">
 			<label for="username">Name:</label>
 			<input type="text" class="form-control" id="username" placeholder="Userame" name="username">
@@ -51,19 +55,12 @@
 			<label for="adresse">Adress:</label>
 			<input type="text" class="form-control" id="adresse" placeholder="adresse" name="adresse">
 		</div>
-		<div class="form-group">
-			<label for="salutation">Salutation:</label>
-			<input type="text" class="form-control" id="salutation" placeholder="salutation" name="salutation">
-		</div>
 		
-		<input type="button" name="save" class="btn btn-primary" value="Save to database" id="butsave">
-
+			<input type="button" name="save" class="btn btn-primary" value="Save to database" id="butsave">
+		</div>
 
 	</form>
 </div>
-</body>
-<script>
-	includeHTML();
-</script>
 
-</html>
+
+<?php include "../webstructure/footer.php"; ?>
