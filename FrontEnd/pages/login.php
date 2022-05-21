@@ -26,6 +26,9 @@
                     <input type="text" id="username" name="username" class="form-control"><br>
                     <label class="text-light" for="password">Password</label>
                     <input type="password" id="password" name="password" class="form-control">
+                    <label>
+                    <input type="checkbox" name="angemeldet_bleiben" value="1"> Angemeldet bleiben</label><br>
+                    
                 </div>
                 <!-- <span class="error"><#?php echo $loginErr;?></span> -->
                 <br>
