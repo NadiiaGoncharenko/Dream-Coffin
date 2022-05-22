@@ -32,7 +32,7 @@
 
             
                 <?php   #admin =1      # Different Menu for different Userrole
-                $_SESSION["userrole"] = 3; #simulation without DB
+                //$_SESSION["userrole"] = 3; #simulation without DB
                 
                 if(isset($_SESSION["userrole"]) && $_SESSION["userrole"] == 1 ): ?> 
                     

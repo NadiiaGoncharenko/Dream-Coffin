@@ -13,7 +13,7 @@
     include '../webstructure/menuleiste.php';
   ?>
 
-<div style="background-image: url('../res/img/background.jpg'); padding-bottom:5%">
+<div style="background-image: url('../res/img/background.jpg'); padding-bottom:1%">
 <br> <?php $loginErr = ""; ?>
 
     <div class="container">
@@ -32,8 +32,7 @@
                 </div>
                 <!-- <span class="error"><#?php echo $loginErr;?></span> -->
                 <br>
-                <!-- angemeldet bleiben noch zu machen-->
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" id="login" class="btn btn-primary">Login</button>
             </form>
         <!--Die Anzeige für eingeloggte User zum Ausloggen-->
         <?php else:?>

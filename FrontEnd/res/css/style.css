@@ -30,10 +30,11 @@
 }
 
 .background{
-    background-image: url('./img/background.jpg'); 
+    background-image: url('../img/background.jpg'); 
     min-height:100%;
 }
-.news{
+.product{ 
+    /* .news{  */
     margin-top: 3%;
     margin-left: 14%;
 }

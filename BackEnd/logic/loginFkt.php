@@ -1,4 +1,8 @@
-<!-- <?php
+    <?php
+
+
+if(isset(id="login")){
+
     if(session_status() == PHP_SESSION_NONE){
         session_start();
     }
@@ -17,13 +21,16 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         //DB connection
-        require_once ('../config/dbaccess.php');
-        $db_obj = new mysqli($host, $user, $password, $database);
-        if ($db_obj->connect_error) {
-            echo "Collection failed!";
-            exit();
-        }
+        // require_once ('../config/dbaccess.php');
+        // $db_obj = new mysqli($host, $user, $password, $database);
+        // if ($db_obj->connect_error) {
+        //     echo "Collection failed!";
+        //     exit();
+        // }
         
+
+        include "../config/db.php";
+
         //check username & password with DB
         if(!isset($_POST["username"]) || !isset($_POST["password"]) || empty($_POST["username"]) || empty($_POST["password"])){
             $loginErr = "Username or Password was not set.";
@@ -46,11 +53,11 @@
             if(!empty($passwordDB) && password_verify($_POST["password"], $passwordDB)){
                 $_SESSION["userID"] = $userID;
                 $_SESSION["username"] = $username;
-                $_SESSION["roleID"] = $userID;
+                $_SESSION["roleID"] = $roleID;
                 //close the statement
                 $stmt->close();
             }else{
-                $loginErr = "Username or Password was not correct.<br> Or your account was deactivated.";
+                $loginErr = "Username or Password was not correct.<br>";
             }
             //close the connection
             $db_obj->close();
@@ -62,4 +69,5 @@
         $data = htmlspecialchars($data); //zu htmlspecialchars machen (Security reasons)
         return $data;
     }
+}
     ?>

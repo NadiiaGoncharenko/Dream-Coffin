@@ -21,19 +21,19 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../res/pics/coffin/Belvedere.jpg" class="d-block w-50" alt="another coffin">
+                <img src="../res/pics/coffin/Belvedere.jpg" class="d-block w-50 center" alt="another coffin">
             </div>
             <div class="carousel-item">
-                <img src="../res/pics/coffin/Eisenstadt.jpg" class="d-block w-50" alt="coffin">
+                <img src="../res/pics/coffin/Eisenstadt.jpg" class="d-block w-50 center" alt="coffin">
             </div>
             <div class="carousel-item">
-                <img src="../res/pics/urn/Artemis.jpg" class="d-block w-50" alt="urn">
+                <img src="../res/pics/urn/Artemis.jpg" class="d-block w-50 center" alt="urn">
             </div>
             <div class="carousel-item">
-                <img src="../res/pics/urn/Hermes.jpg" class="d-block w-50" alt="another urn">
+                <img src="../res/pics/urn/Hermes.jpg" class="d-block w-50 center" alt="another urn">
             </div>
             <div class="carousel-item">
-                <img src="../res/pics/natural.jpg" class="d-block w-50" alt="natur">
+                <img src="../res/pics/natural.jpg" class="d-block w-50 center" alt="natur">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
