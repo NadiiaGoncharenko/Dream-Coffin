@@ -4,8 +4,8 @@
 	$email=$_POST['email'];
 	var_dump("save.php works");
 	$password = $_POST["password"];
-	// password = htmlspecialchars("password");
-	// password = password_hash($password, PASSWORD_DEFAULT); 
+	$password = htmlspecialchars("password");
+	$password = password_hash($password, PASSWORD_DEFAULT); 
 
 	$ort=$_POST['ort'];
 	$adresse=$_POST['adresse'];
