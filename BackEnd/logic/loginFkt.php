@@ -1,7 +1,11 @@
-    <?php
+<?php
+    include '../config/db.php';
+	$username=$_POST['username_log'];
+	var_dump("save.php works");
+	$password = $_POST["password_log"];
+	$password = htmlspecialchars("password");
+	$password = password_hash($password, PASSWORD_DEFAULT); 
 
-
-if(isset(id="login")){
 
     if(session_status() == PHP_SESSION_NONE){
         session_start();
@@ -20,23 +24,14 @@ if(isset(id="login")){
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        //DB connection
-        // require_once ('../config/dbaccess.php');
-        // $db_obj = new mysqli($host, $user, $password, $database);
-        // if ($db_obj->connect_error) {
-        //     echo "Collection failed!";
-        //     exit();
-        // }
-        
-
         include "../config/db.php";
 
         //check username & password with DB
-        if(!isset($_POST["username"]) || !isset($_POST["password"]) || empty($_POST["username"]) || empty($_POST["password"])){
+        if(!isset($_POST["username_log"]) || !isset($_POST["password_log"]) || empty($_POST["username_log"]) || empty($_POST["password_log"])){
             $loginErr = "Username or Password was not set.";
         }else{
-            $username = test_input($_POST["username"]);
-            $password = htmlspecialchars($_POST["password"]);
+            $username = test_input($_POST["username_log"]);
+            $password = htmlspecialchars($_POST["password_log"]);
             
             $sql = "SELECT `password`, `userID`, `roleID` FROM `user` WHERE `username` = ?";
 
@@ -50,7 +45,7 @@ if(isset(id="login")){
             $stmt ->bind_result($passwordDB, $userID, $roleID);
             $stmt->fetch();
 
-            if(!empty($passwordDB) && password_verify($_POST["password"], $passwordDB)){
+            if(!empty($passwordDB) && password_verify($_POST["password_log"], $passwordDB)){
                 $_SESSION["userID"] = $userID;
                 $_SESSION["username"] = $username;
                 $_SESSION["roleID"] = $roleID;
@@ -69,5 +64,5 @@ if(isset(id="login")){
         $data = htmlspecialchars($data); //zu htmlspecialchars machen (Security reasons)
         return $data;
     }
-}
+
     ?>
