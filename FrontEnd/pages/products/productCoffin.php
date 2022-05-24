@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/FrontEnd/res/css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <title>All products</title>
+    <title>COFFINs</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         </style>
         <div class="jumbotron text-center">
             <br>
-            <h1 class="display-5">All Products</h1>
+            <h1 class="display-5">COFFINs</h1>
             <?php
 
             $menu = @$_GET['menu'];
@@ -44,11 +44,11 @@
             <div class="container-fluid">
            <!-- <img src="http://localhost/webprojekt/Dream-Coffin/FrontEnd/res/pics/coffin/Eisenstadt.jpg" class="d-block w-100" alt="coffin"> -->
               <?php 
-                echo "<a href=\"./productCoffin.php\"><img src=\"../../res/pics/coffin/coreljewel.jpg\"/>";
+                echo "<a href=\"./productCoffin.php\"><img src=\"/FrontEnd/res/pics/urn/Artemis.jpg\"/>";
                ?>
                <h3>COFFINs</h3>
                <?php   
-                echo "<br/><a href=\"./productUrn.php\"><img src=\"../../res/pics/urn/Artemis.jpg\"/ >";
+                echo "<br/><a href=\"./productUrn.php\"><img src=\"/FrontEnd/res/pics/urn/Artemis.jpg\"/ >";
               ?>
               <h3>URNs</h3>
             </div>
