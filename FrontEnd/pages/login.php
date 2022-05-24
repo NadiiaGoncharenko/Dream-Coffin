@@ -35,10 +35,12 @@
         <!--Die Anzeige für eingeloggte User zum Ausloggen-->
         <?php else:?>
             <h2 class="text-light">Hello, <?php echo $_SESSION["username"]?>!</h2>
-                <div class="text-light" id="logout">
+                <div class="text-light" >
                     Push the button "Logout" to logout from your profil.
-                </div><br>
-            <a class="btn btn-primary" href="?logout=true">Logout</a>
+                </div>
+                <br>
+                <input type="button" name="logout" class="btn btn-primary" value="Logout" id="logout">
+            <!-- <a class="btn btn-primary" id="logout" href="?logout=true">Logout</a> -->
         <?php endif?>
     </div>
 </div>

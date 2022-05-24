@@ -1,6 +1,6 @@
 <?php
     include '../config/db.php';
-	$username=$_POST['username'];
+	$username = $_POST['username'];
 	
 	$password = $_POST["password"];
 	$password = htmlspecialchars("password");
@@ -13,19 +13,21 @@
 
     $loginErr = "";
 
-    //falls sich jemand ausloggt, werden die gesetzten Userdaten aus der Session gelöscht
-    if(isset($_GET['logout']) && $_GET['logout'] == 'true'){
-        unset($_SESSION['userID']);
-        unset($_SESSION["roleID"]);
-        unset($_SESSION["username"]);
-        header('Location: login.php');
-        die();
-    }
+    // //falls sich jemand ausloggt, werden die gesetzten Userdaten aus der Session gelöscht
+    // if(isset($_GET['logout']) && $_GET['logout'] == 'true'){
+    //     unset($_SESSION['userID']);
+    //     unset($_SESSION["roleID"]);
+    //     unset($_SESSION["username"]);
+    //     header('Location: login.php');
+    //     // session_destroy();
+    //     die();
+    // }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         include "../config/db.php";
 
+    
         //check username & password with DB
         if(!isset($password) || !isset($password) || empty($username) || empty($username)){
             $loginErr = "Username or Password was not set.";
@@ -45,25 +47,26 @@
             $stmt ->bind_result($passwordDB, $userID, $roleID);
             $stmt->fetch();
 
+            //проблема тут, но в чем???
             if(!empty($passwordDB) && password_verify($password, $passwordDB)){
                 $_SESSION["userID"] = $userID;
                 $_SESSION["username"] = $username;
                 $_SESSION["roleID"] = $roleID;
                 //close the statement
-                // Check if "Stay logged in!" has been ticked NO IDEA 
-    if ($_POST['safe'] != empty ) {
-        $logincookieduration = 31536000; //valid for 1 year
-        setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
-        setcookie("username", $_POST['username'], time() + $logincookieduration);
-        setcookie("password", $_POST['password'], time() + $logincookieduration);
-        setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
-    }
-    ?>
-
-
-
-
+                                
                 $stmt->close();
+
+
+                // Check if "Stay logged in!" has been ticked
+                if (@$_POST['safeit'] == '1') {
+                    $logincookieduration = 31536000; //valid for 1 year
+                    setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
+                    setcookie("username", $_POST['username'], time() + $logincookieduration);
+                    setcookie("password", $_POST['password'], time() + $logincookieduration);
+                    setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
+                }
+                
+
             }else{
                 $loginErr = "Username or Password was not correct";
             }

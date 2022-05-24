@@ -31,18 +31,18 @@
                 <?php endif ?>
 
             
-                <?php   #admin =1      # Different Menu for different Userrole
-                #$_SESSION["userrole"] = 1; #simulation without DB
+                <?php   #admin =1      # Different Menu for different roleID
+                #$_SESSION["roleID"] = 1; #simulation without DB
                 
-                if(isset($_SESSION["userrole"]) && $_SESSION["userrole"] == 1 ): ?> 
+                if(isset($_SESSION["roleID"]) && $_SESSION["roleID"] == 1 ): ?> 
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             User Administration
                         </a>
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="./registration_form.php">User registration</a>
-                            <a class="dropdown-item" href="./user_table.php">All Users</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/registration_form.php">User registration</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/updateProfile.php">All Users</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -50,31 +50,28 @@
                             Products and orders
                         </a>
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="./product.php">Create Product</a>
-                            <a class="dropdown-item" href="./edit_products.php">Edit products</a>
-                            
-                            <a class="dropdown-item" href="./edit_user.php">Edit user</a>
-                            <!-- <a class="dropdown-item" href="./all_products.php">All products</a> -->
-                            <a class="dropdown-item" href="./invoices.php">All invoices</a>
-                            <a class="dropdown-item" href="./invoice_detail.php">Invoice</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/product/product.php">Create Product</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/products/edit_products.php">Edit products</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/products/all_products.php">All products</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoices/invoices.php">All invoices</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoices/invoice_detail.php">Invoice</a>
                         </div>
                     </li>
                 
               
-                <?php  #guest =3
-                elseif(isset($_SESSION["userrole"]) && $_SESSION["userrole"] == 3 ): ?>
+                <?php  #user =3
+                elseif(isset($_SESSION["roleID"]) && $_SESSION["roleID"] == 3 ): ?>
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             My Cabinet
                         </a>
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="./editData.php?userID=<?php echo $_SESSION["userID"];?>">Edit Profile</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/updateProfile.php?userID=<?php echo $_SESSION["userID"];?>">Edit Profile</a>
                            <!-- //userID übergabe aus DB -->
-                            <a class="dropdown-item" href="./all_orders_user.php">Your Orders</a>
-                            <a class="dropdown-item" href="./all_invoices_user.php">Your Invoices</a>
-                            <a class="dropdown-item" href="./editData.php">Edit Profile</a>
-                            
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/all_orders_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Orders</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/all_invoices_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Invoices</a>
+                                                       
                         </div>
                     </li>
 

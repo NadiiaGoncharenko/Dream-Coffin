@@ -13,7 +13,7 @@
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 	</div>
 	<table class="table table-bordered table-sm" >
-    <thead>
+    <thead style="background-color: #c2d3df;">
       <tr>
         <th>Username</th>
         <th>First Name</th>
