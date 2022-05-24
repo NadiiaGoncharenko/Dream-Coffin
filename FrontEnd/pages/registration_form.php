@@ -55,8 +55,7 @@
 			<label for="adresse">Adress:</label>
 			<input type="text" class="form-control" id="adresse" placeholder="adresse" name="adresse">
 		</div>
-		
-			<input type="button" name="save" class="btn btn-primary" value="Save to database" id="butsave">
+			<input type="button"  name="save" class="btn btn-primary" value="Save to database" id="butsave">
 		</div>
 
 	</form>

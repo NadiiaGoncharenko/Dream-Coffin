@@ -57,27 +57,9 @@
       
           <input type="hidden" value= "<?php echo $userID ; ?>" name="userID"></input>
         </div> 
-        <?php if(isset($_SESSION["userrole"]) && $_SESSION["userrole"] == 1):?> 
-          <!--If a Administrator is logged in, it is possible to update userrole and activation status of other user-->
-          <div class="form-group col-md-3">
-            <label for="userType">UserType</label>
-            <select id="userType" name="userType" class="form-control">
-              <option <?php if ($usertype==3) {echo "selected"; }?>>Normal User</option>
-              <option <?php if ($usertype==2) {echo "selected"; }?>>Service Engineer</option>
-              <option <?php if ($usertype==1) {echo "selected"; }?>>Admin</option>
-            </select>
-          </div>
-          <div class="form-group col-md-3">
-            <label for="activation">Activation</label>
-            <select id="activation" name="activation" class="form-control" value="<?php echo $activation;?>">
-              <option <?php if ($activation=="Activated") {echo "selected"; }?>>Activated</option>
-              <option <?php if ($activation=="Deactivated") {echo "selected"; }?>>Deactivated</option>
-            </select>
-          </div>
-        <?php endif; ?> 
+
 
         <button type='submit' name='submit' class='btn btn-primary' value="id"> Update </button><br><br>
-        <a class="btn btn-primary" href="changePw.php?userID= <?php echo $_GET["userID"]; ?>" >Change password</a>
       </form>
       <br>
       <?php if(isset($_SESSION["userrole"]) && $_SESSION["userrole"] == 1): ?>

@@ -11,20 +11,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./index.php">Home</a>
+                    <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./imprint.php">Imprint</a>
+                    <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/imprint.php">Imprint</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./helpsite.php">Help</a>
+                    <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/helpsite.php">Help</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./warenkorb.php">Warenkorb</a>
                 </li>
                 <?php if(!isset($_SESSION["userID"])): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="./registration_form.php">Registration</a>
+                    <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/registration_form.php">Registration</a>
                 </li>
                 
             
@@ -32,7 +32,7 @@
 
             
                 <?php   #admin =1      # Different Menu for different Userrole
-                //$_SESSION["userrole"] = 3; #simulation without DB
+                #$_SESSION["userrole"] = 1; #simulation without DB
                 
                 if(isset($_SESSION["userrole"]) && $_SESSION["userrole"] == 1 ): ?> 
                     
@@ -82,7 +82,7 @@
 
                 <?php if(isset($_SESSION["userID"])):?>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.php">Logout</a>
+                        <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/login.php">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">

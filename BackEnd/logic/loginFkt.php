@@ -1,8 +1,8 @@
 <?php
     include '../config/db.php';
-	$username=$_POST['username_log'];
-	var_dump("save.php works");
-	$password = $_POST["password_log"];
+	$username=$_POST['username'];
+	
+	$password = $_POST["password"];
 	$password = htmlspecialchars("password");
 	$password = password_hash($password, PASSWORD_DEFAULT); 
 
@@ -27,16 +27,16 @@
         include "../config/db.php";
 
         //check username & password with DB
-        if(!isset($_POST["username_log"]) || !isset($_POST["password_log"]) || empty($_POST["username_log"]) || empty($_POST["password_log"])){
+        if(!isset($password) || !isset($password) || empty($username) || empty($username)){
             $loginErr = "Username or Password was not set.";
         }else{
-            $username = test_input($_POST["username_log"]);
-            $password = htmlspecialchars($_POST["password_log"]);
+            $username = test_input($username);
+            $password = htmlspecialchars($password);
             
             $sql = "SELECT `password`, `userID`, `roleID` FROM `user` WHERE `username` = ?";
 
             //use prepare function
-            $stmt = $db_obj->prepare($sql);
+            $stmt = mysqli_prepare($con, $sql);
             //followed by the variables which will be bound to the parameters
             $stmt-> bind_param("s", $username);
             //execute statement
@@ -45,17 +45,36 @@
             $stmt ->bind_result($passwordDB, $userID, $roleID);
             $stmt->fetch();
 
-            if(!empty($passwordDB) && password_verify($_POST["password_log"], $passwordDB)){
+            if(!empty($passwordDB) && password_verify($password, $passwordDB)){
                 $_SESSION["userID"] = $userID;
                 $_SESSION["username"] = $username;
                 $_SESSION["roleID"] = $roleID;
                 //close the statement
+                // Check if "Stay logged in!" has been ticked NO IDEA 
+    if ($_POST['safe'] != empty ) {
+        $logincookieduration = 31536000; //valid for 1 year
+        setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
+        setcookie("username", $_POST['username'], time() + $logincookieduration);
+        setcookie("password", $_POST['password'], time() + $logincookieduration);
+        setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
+    }
+    ?>
+
+
+
+
                 $stmt->close();
             }else{
-                $loginErr = "Username or Password was not correct.<br>";
+                $loginErr = "Username or Password was not correct";
             }
             //close the connection
-            $db_obj->close();
+            $stmt->close();
+        }
+        if ($loginErr){
+            echo $loginErr;
+        } 
+        else{
+            echo "success";
         }
     }
     function test_input($data){

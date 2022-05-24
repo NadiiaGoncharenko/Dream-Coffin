@@ -17,21 +17,21 @@
         <!--Das Login Formular-->
         <?php if(!isset($_SESSION["userID"])): ?>
             <h1 class=" page-header text-light">Login</h1>
-            <form id="login_form"  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <!-- <form id="login_form"  method="post" > -->
                 <div class="form-group">
                     <label class="text-light" for="username">Username</label>
                     <input type="text" id="username_log" name="username" class="form-control"><br>
                     <label class="text-light" for="password">Password</label>
                     <input type="password" id="password_log" name="password" class="form-control">
                     <label>
-                    <input type="checkbox" name="angemeldet_bleiben" value="1"> Angemeldet bleiben</label><br>
+                    <input type="checkbox" name="angemeldet_bleiben" value="1" id="safe"> Angemeldet bleiben</label><br>
                     
                 </div>
                 <!-- <span class="error"><#?php echo $loginErr;?></span> -->
                 <br>
                 <!-- <button type="submit" id="login" class="btn btn-primary">Login</button> -->
-                <input type="button" name="login" class="btn btn-primary" onclick="../js/loginAjax.js" value="Login" id="login">
-            </form>
+                <input type="button" name="login" class="btn btn-primary" value="Login" id="login">
+            <!-- </form> -->
         <!--Die Anzeige für eingeloggte User zum Ausloggen-->
         <?php else:?>
             <h2 class="text-light">Hello, <?php echo $_SESSION["username"]?>!</h2>

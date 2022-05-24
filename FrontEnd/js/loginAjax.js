@@ -1,10 +1,9 @@
 $(document).ready(function() {
-	console.log("login work still");
 	$('#login').on('click', function() {
-		var username = $('#username_log').val();
+		console.log("control");
+        var username = $('#username_log').val();
 		var password = $('#password_log').val();
 		if(username!="" && password!="" ){
-            
 			$.ajax({
 				url: "http://localhost/Dream-Coffin/BackEnd/logic/loginFkt.php",
 				type: "POST",
@@ -16,7 +15,7 @@ $(document).ready(function() {
 				success: function(dataResult){
 					// var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
-						location.href = "welcome.php";						
+						location.href = "http://localhost/Dream-Coffin/FrontEnd/pages/index.php";						
 					}
 					else if(dataResult.statusCode==201){
 						$("#error").show();
