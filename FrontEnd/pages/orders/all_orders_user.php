@@ -1,9 +1,9 @@
 <?php
-    include '../webstructure/head.php';
+    include '../../webstructure/head.php';
 ?>
-    <title>Help page</title>
+    <title>Your orders</title>
 </head>
 <body>
   <?php
-    include '../webstructure/menuleiste.php';
+    include '../../webstructure/menuleiste.php';
   ?>

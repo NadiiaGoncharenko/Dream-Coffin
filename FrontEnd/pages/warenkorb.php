@@ -2,10 +2,12 @@
     include '../webstructure/head.php';
 ?>
 
-  <h1 class="center">under construction</h1>
-    <title>Edit Product</title>
+
+    <title>Warenkorb</title>
 </head>
 <body>
-<?php
+  <?php
     include '../webstructure/menuleiste.php';
   ?>
+
+  <h1 class="center">under construction</h1>

@@ -1,7 +1,7 @@
 <?php
 
     //falls sich jemand ausloggt, werden die gesetzten Userdaten aus der Session gelöscht
-    if(isset($_POST['logout']) && $_POST['logout'] == 'true'){
+    if(isset($_POST['logout']) ){
         unset($_SESSION['userID']);
         unset($_SESSION["roleID"]);
         unset($_SESSION["username"]);

@@ -3,9 +3,9 @@
 	$username = $_POST['username'];
 	
 	$password = $_POST["password"];
-	$password = htmlspecialchars("password");
-	$password = password_hash($password, PASSWORD_DEFAULT); 
-
+// 	 $password = htmlspecialchars($password);
+// 	 $password = password_hash($password, PASSWORD_DEFAULT); 
+// echo $password;
 
     if(session_status() == PHP_SESSION_NONE){
         session_start();
@@ -27,8 +27,7 @@
     {
         include "../config/db.php";
 
-    
-        //check username & password with DB
+            //check username & password with DB
         if(!isset($password) || !isset($password) || empty($username) || empty($username)){
             $loginErr = "Username or Password was not set.";
         }else{
@@ -47,17 +46,20 @@
             $stmt ->bind_result($passwordDB, $userID, $roleID);
             $stmt->fetch();
 
+            // echo($passwordDB);
+            
             //проблема тут, но в чем???
+            var_dump(password_verify($password, $passwordDB));
+            // echo(!empty($passwordDB));
             if(!empty($passwordDB) && password_verify($password, $passwordDB)){
                 $_SESSION["userID"] = $userID;
                 $_SESSION["username"] = $username;
                 $_SESSION["roleID"] = $roleID;
+
+
                 //close the statement
-                                
                 $stmt->close();
-
-
-                // Check if "Stay logged in!" has been ticked
+               // Check if "Stay logged in!" has been ticked
                 if (@$_POST['safeit'] == '1') {
                     $logincookieduration = 31536000; //valid for 1 year
                     setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);

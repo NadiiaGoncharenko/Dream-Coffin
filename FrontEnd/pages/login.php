@@ -15,7 +15,8 @@
     <?php $loginErr = ""; ?>
     <div class="container">
         <!--Das Login Formular-->
-        <?php if(!isset($_SESSION["userID"])): ?>
+        <?php if(!isset($_SESSION["userID"])): ?> 
+<!-- //можливо краще з юзерайди -->
             <h1 class=" page-header text-light">Login</h1>
             <!-- <form id="login_form"  method="post" > -->
                 <div class="form-group">

@@ -1,9 +1,13 @@
 <?php
-    include '/FrontEnd/webstructure/head.php';
+    include '../../webstructure/head.php';
 ?>
-    <title>Help page</title>
+
+
+    <title>Invoice</title>
 </head>
 <body>
   <?php
-    include '../webstructure/menuleiste.php';
+    include '../../webstructure/menuleiste.php';
   ?>
+
+  <h1 class="center">under construction</h1>

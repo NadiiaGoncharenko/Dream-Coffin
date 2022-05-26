@@ -20,7 +20,7 @@
                     <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/helpsite.php">Help</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./warenkorb.php">Warenkorb</a>
+                    <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/warenkorb.php">Warenkorb</a>
                 </li>
                 <?php if(!isset($_SESSION["userID"])): ?>
                 <li class="nav-item">
@@ -32,7 +32,7 @@
 
             
                 <?php   #admin =1      # Different Menu for different roleID
-                #$_SESSION["roleID"] = 1; #simulation without DB
+                // $_SESSION["roleID"] = 1; #simulation without DB
                 
                 if(isset($_SESSION["roleID"]) && $_SESSION["roleID"] == 1 ): ?> 
                     
@@ -50,7 +50,6 @@
                             Products and orders
                         </a>
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/product/product.php">Create Product</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/products/edit_products.php">Edit products</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/products/all_products.php">All products</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoices/invoices.php">All invoices</a>
@@ -77,13 +76,15 @@
 
                 <?php endif ?> 
 
+                <!-- <//?php if(isset($_SESSION["userID"])):?> --> 
+                    <!-- напевне так краще -->
                 <?php if(isset($_SESSION["userID"])):?>
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/login.php">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.php">Login</a>
+                        <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/login.php">Login</a>
                     </li>
                 <?php endif ?> 
 
