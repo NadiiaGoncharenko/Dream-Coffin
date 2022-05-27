@@ -88,7 +88,16 @@
 						<input type="text" name="ort_modal" id="ort_modal" class="form-control-sm" >
 					</div>	
 				</div>
-                <!--7-->
+                <!--6-->
+                <div class="row">
+					<div class="col-md-3">
+					    <label>Adresse</label>
+					</div>
+					<div class="col-md-9">
+						<input type="text" name="adresse_modal" id="adresse_modal" class="form-control-sm" >
+					</div>	
+				</div>
+				<!--7-->
                 <div class="row">
 					<div class="col-md-3">
 					    <label>Plz</label>
@@ -97,10 +106,11 @@
 						<input type="text" name="plz_modal" id="plz_modal" class="form-control-sm" >
 					</div>	
 				</div>
-				<input type="hidden" name="id_modal" id="id_modal" class="form-control-sm">
+				<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">
 			</div>
 			<div class="modal-footer" style="padding-bottom:0px !important;text-align:center !important;">
-			<p style="text-align:center;float:center;"><button type="submit" id="update_data" class="btn btn-default btn-sm" style="background-color: #e35f14;color:#fff;">Save</button>
+			<p style="text-align:center;float:center;">
+			<button type="submit" id="update_data" class="btn btn-default btn-sm" style="background-color: #e35f14;color:#fff;">Save</button>
 			<button type="button" class="btn btn-default btn-sm" data-dismiss="modal" style="background-color: #e35f14;color:#fff;">Close</button></p>
 			
 		  </div>
@@ -123,7 +133,7 @@ $(document).ready(function() {
 	$(function () {
 		$('#update_country').on('show.bs.modal', function (event) {
 			var button = $(event.relatedTarget); /*Button that triggered the modal*/
-			
+			var userID = button.data('userid');
 			var fname = button.data('fname');
             var lname = button.data('lname');
 			var email = button.data('email');
@@ -132,12 +142,14 @@ $(document).ready(function() {
             var adresse = button.data('adresse');
             var username = button.data('username');
 			var modal = $(this);
+			modal.find('#username_modal').val(username);
 			modal.find('#lname_modal').val(lname);
+			modal.find('#fname_modal').val(fname);
 			modal.find('#email_modal').val(email);
 			modal.find('#plz_modal').val(plz);
 			modal.find('#adresse_modal').val(adresse);
-            modal.find('#fname_modal').val(fname);
-            modal.find('#username_modal').val(username);
+            modal.find('#ort_modal').val(ort);
+            modal.find('#userID_modal').val(userID);
             
 		});
     });
@@ -151,8 +163,10 @@ $(document).ready(function() {
                 fname: $('#fname_modal').val(),
                 lname: $('#lname_modal').val(),
 				email: $('#email_modal').val(),
-				phone: $('#ort_modal').val(),
-				city: $('#plz_modal').val(),
+				ort: $('#ort_modal').val(),
+				plz: $('#plz_modal').val(),
+				adresse: $('#adresse_modal').val(),
+				userID:$('#userID_modal').val(),
 			},
 			success: function(dataResult){
 			//	var dataResult = JSON.parse(dataResult);
