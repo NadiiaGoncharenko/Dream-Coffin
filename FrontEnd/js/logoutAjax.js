@@ -6,7 +6,7 @@ $(document).ready(function() {
 					url: "http://localhost/Dream-Coffin/BackEnd/logic/loginFkt.php",
 					type: "POST",
 					data: {
-												
+									
 					},
 					cache: false,
 					success: function(dataResult){

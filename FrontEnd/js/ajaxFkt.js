@@ -5,6 +5,7 @@ $("#butsave").attr("disabled", "disabled");
 var username = $('#username').val();
 var email = $('#email').val();
 var password = $('#password').val();
+console.log("password");
 var plz = $('#plz').val();
 var ort = $('#ort').val();
 var adresse = $('#adresse').val();

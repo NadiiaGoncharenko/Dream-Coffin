@@ -3,6 +3,7 @@
 	$username = $_POST['username'];
 	
 	$password = $_POST["password"];
+    var_dump($password);
 // 	 $password = htmlspecialchars($password);
 // 	 $password = password_hash($password, PASSWORD_DEFAULT); 
 // echo $password;
@@ -46,8 +47,7 @@
             $stmt ->bind_result($passwordDB, $userID, $roleID);
             $stmt->fetch();
 
-            // echo($passwordDB);
-            
+            var_dump($passwordDB);
             //проблема тут, но в чем???
             var_dump(password_verify($password, $passwordDB));
             // echo(!empty($passwordDB));

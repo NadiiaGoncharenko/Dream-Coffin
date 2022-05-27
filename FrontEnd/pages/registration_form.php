@@ -33,7 +33,7 @@
 		</div>
 		<div class="form-group">
 			<label for="password">Password:</label>
-			<input type="text" class="form-control" id="password" placeholder="password" name="password">
+			<input type="password" class="form-control" id="password" placeholder="password" name="password">
 		</div>
 		<div class="form-group">
 			<label for="lname">Last Name:</label>

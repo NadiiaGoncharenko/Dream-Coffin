@@ -11,8 +11,10 @@
 
 
 <div class= "card">
-  <div class="card-title"> <h1><?= $row[1] ?></h2> </div>
-  <img src="../../res/pics/<?=$row[4]?>" class="card-img-top" alt="..." height="242" width="42" > 
+  <div class="card-title">
+     <h1><?= $row[1] ?></h1> 
+    </div>
+  <img src="../../res/pics/<?php=$row[4]?>" class="card-img-top" alt="..." height="242" width="42" > 
   <div class="card-body">
   <?= $row[2] ?> 
   <hr>
