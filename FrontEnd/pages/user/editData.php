@@ -127,7 +127,7 @@ if(session_status() == PHP_SESSION_NONE){
 					    <label>Password</label>
 					</div>
 					<div class="col-md-9">
-						<input type="text" name="password" placeholder="***"   id="password" class="form-control-sm" >
+						<input type="text" name="password" placeholder="****"   id="password" class="form-control-sm" >
 					</div>
 
 				<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">

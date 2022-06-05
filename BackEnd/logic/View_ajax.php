@@ -16,7 +16,7 @@
 			<td><button type="button" class="btn btn-success btn-sm update" 
             data-toggle="modal" data-keyboard="false" data-backdrop="static" data-target="#update_country"
             data-userID="<?=$row['userID'];?>"
-			data-password="<?=$row['password'];?>"
+			data-password placeholder="****"="<?=$row['password'];?>"
 			data-username="<?=$row['username'];?>"
             data-fname="<?=$row['fname'];?>"
             data-lname="<?=$row['lname'];?>"
