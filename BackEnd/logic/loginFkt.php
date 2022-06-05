@@ -53,12 +53,13 @@
                 $_SESSION["username"] = $username;
                 $_SESSION["roleID"] = $roleID;
 
+                if ("safe"){
                 //coockies 
                     $logincookieduration = 31536000; //valid for 1 year
                     setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
                     setcookie("username", $_POST['username'], time() + $logincookieduration);
                     setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
-
+                }
                 //close the statement
                 $stmt->close();
             }else{

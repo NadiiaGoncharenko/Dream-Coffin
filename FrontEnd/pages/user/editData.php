@@ -127,7 +127,7 @@ if(session_status() == PHP_SESSION_NONE){
 					    <label>Password</label>
 					</div>
 					<div class="col-md-9">
-						<input type="text" name="password" id="password" class="form-control-sm" >
+						<input type="text" name="password" placeholder="***"   id="password" class="form-control-sm" >
 					</div>
 
 				<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">
@@ -146,8 +146,8 @@ if(session_status() == PHP_SESSION_NONE){
 
 <script>
 $(document).ready(function() {
-  console.log("view");
-	$.ajax({
+  
+  $.ajax({
 		url: "http://localhost/Dream-Coffin/BackEnd/logic/view_user.php",
 		type: "POST",
 		cache: false,
@@ -211,6 +211,7 @@ $(document).ready(function() {
 		});
 	}); 
 });
+
 </script>
 </body>
 </html>
