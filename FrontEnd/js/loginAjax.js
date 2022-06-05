@@ -14,7 +14,10 @@ $(document).ready(function() {
 				cache: false,
 				success: function(dataResult){
 					// var dataResult = JSON.parse(dataResult);
-					if(dataResult.statusCode==200){
+					console.log("loginFkt", dataResult);
+					if(dataResult == "success"){
+
+						console.log("login_drin");
 						location.href = "http://localhost/Dream-Coffin/FrontEnd/pages/index.php";						
 					}
 					else if(dataResult.statusCode==201){

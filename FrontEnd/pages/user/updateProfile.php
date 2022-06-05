@@ -1,4 +1,7 @@
 <?php
+if(session_status() == PHP_SESSION_NONE){
+	session_start();
+}
     include '../../webstructure/head.php';
     include '../../webstructure/menuleiste.php';
   ?>
@@ -30,6 +33,12 @@
     </tbody>
   </table>
 </div>
+
+
+
+
+
+
 <!-- Modal Update-->
     <div class="modal fade" id="update_country" role="dialog">
 		<div class="modal-dialog modal-sm">
@@ -39,7 +48,7 @@
 			 
 			</div>
 			<div class="modal-body">
-			
+
 				<!--1-->
 				<div class="row">
 					<div class="col-md-3">
@@ -106,6 +115,21 @@
 						<input type="text" name="plz_modal" id="plz_modal" class="form-control-sm" >
 					</div>	
 				</div>
+
+				<!-- password check -->
+				<!--7-->
+                <div class="row">
+
+				</div>	
+					<h9 class= "col-med-7"> <br>*no password = no update*</h9>
+				
+					<div class="col-md-3">
+					    <label>Password</label>
+					</div>
+					<div class="col-md-9">
+						<input type="text" name="password" id="password" class="form-control-sm" >
+					</div>
+
 				<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">
 			</div>
 			<div class="modal-footer" style="padding-bottom:0px !important;text-align:center !important;">
@@ -140,6 +164,7 @@ $(document).ready(function() {
             var ort = button.data('ort');
             var plz = button.data('plz');
             var adresse = button.data('adresse');
+			var password = button.data('password');
             var username = button.data('username');
 			var modal = $(this);
 			modal.find('#username_modal').val(username);
@@ -149,6 +174,7 @@ $(document).ready(function() {
 			modal.find('#plz_modal').val(plz);
 			modal.find('#adresse_modal').val(adresse);
             modal.find('#ort_modal').val(ort);
+			modal.find('#password').val(password);
             modal.find('#userID_modal').val(userID);
             
 		});
@@ -167,6 +193,7 @@ $(document).ready(function() {
 				plz: $('#plz_modal').val(),
 				adresse: $('#adresse_modal').val(),
 				userID:$('#userID_modal').val(),
+				password: $('#password').val()
 			},
 			success: function(dataResult){
 			//	var dataResult = JSON.parse(dataResult);

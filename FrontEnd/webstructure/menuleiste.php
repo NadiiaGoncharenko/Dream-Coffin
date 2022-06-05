@@ -41,8 +41,7 @@
                             User Administration
                         </a>
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/registration_form.php">User registration</a>
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/updateProfile.php">All Users</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/updateProfile.php">Users Profiles</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -66,7 +65,7 @@
                             My Cabinet
                         </a>
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/updateProfile.php?userID=<?php echo $_SESSION["userID"];?>">Edit Profile</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/editData.php?userID=<?php echo $_SESSION["userID"];?>">Edit Profile</a>
                            <!-- //userID übergabe aus DB -->
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/all_orders_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Orders</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/all_invoices_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Invoices</a>

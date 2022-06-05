@@ -5,9 +5,11 @@
 	var_dump("save.php works");
 	$password = $_POST["password"];
 	var_dump($password);
-	$password = htmlspecialchars("password");
+
+	$password = htmlspecialchars($password);
 	$password = password_hash($password, PASSWORD_DEFAULT); 
 	var_dump($password);
+
 	$ort=$_POST['ort'];
 	$adresse=$_POST['adresse'];
 	$salutation=$_POST['salutation'];

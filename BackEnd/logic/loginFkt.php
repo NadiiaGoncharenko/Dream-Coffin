@@ -3,8 +3,8 @@
 	$username = $_POST['username'];
 	
 	$password = $_POST["password"];
-    var_dump($password);
-// 	 $password = htmlspecialchars($password);
+    
+	 $password = htmlspecialchars($password);
 // 	 $password = password_hash($password, PASSWORD_DEFAULT); 
 // echo $password;
 
@@ -47,40 +47,35 @@
             $stmt ->bind_result($passwordDB, $userID, $roleID);
             $stmt->fetch();
 
-            var_dump($passwordDB);
-            //проблема тут, но в чем???
-            var_dump(password_verify($password, $passwordDB));
-            // echo(!empty($passwordDB));
+            //set Session
             if(!empty($passwordDB) && password_verify($password, $passwordDB)){
                 $_SESSION["userID"] = $userID;
                 $_SESSION["username"] = $username;
                 $_SESSION["roleID"] = $roleID;
 
-
-                //close the statement
-                $stmt->close();
-               // Check if "Stay logged in!" has been ticked
-                if (@$_POST['safeit'] == '1') {
+                //coockies 
                     $logincookieduration = 31536000; //valid for 1 year
                     setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
                     setcookie("username", $_POST['username'], time() + $logincookieduration);
-                    setcookie("password", $_POST['password'], time() + $logincookieduration);
                     setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
-                }
-                
 
+                //close the statement
+                $stmt->close();
             }else{
                 $loginErr = "Username or Password was not correct";
             }
-            //close the connection
-            $stmt->close();
-        }
-        if ($loginErr){
+            
+            if ($loginErr){
             echo $loginErr;
         } 
         else{
             echo "success";
+            
         }
+            //close the connection
+           // $stmt->close();
+        }
+        
     }
     function test_input($data){
         $data = trim($data); //unnötige leerzeichen etc entfernen
