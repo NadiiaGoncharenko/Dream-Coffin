@@ -1,6 +1,9 @@
 <?php
 if(session_status() == PHP_SESSION_NONE){
   session_start();
+
+  
+
 }
     include '../../webstructure/head.php';
     include '../../webstructure/menuleiste.php';
@@ -201,7 +204,7 @@ $(document).ready(function() {
 				password: $('#password').val()
 			},
 			success: function(dataResult){
-			//	var dataResult = JSON.parse(dataResult);
+				var dataResult = JSON.parse(dataResult);
 				if(dataResult.statusCode==200){
 					$('#update_country').modal().hide();
 					alert('Data updated successfully !');

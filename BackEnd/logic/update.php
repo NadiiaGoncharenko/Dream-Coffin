@@ -9,7 +9,7 @@
   //connection with DB
   include '../config/db.php';
 
-  var_dump($_POST);
+ // var_dump($_POST);
   $password = $_POST['password'];
   $username=$_POST['username'];
 	$fname=$_POST['fname'];	
@@ -36,16 +36,28 @@
                 $stmt->fetch();
 
    if(password_verify($password, $passwordDB)){
-     echo json_encode(array("statusCode"=>200));
+    // echo json_encode(array("statusCode"=>200));
      
-  var_dump($_POST);
-      $sql = "UPDATE `user` SET `username`=?,`email`=?,`ort`=?,`adresse`=?,`lname`=?,`fname`=?,`plz`=?  WHERE `userID`=? "; 
+ // var_dump($_POST);
+     // $sql = "UPDATE `user` SET `username`=?,`email`=?,`ort`=?,`adresse`=?,`lname`=?,`fname`=?,`plz`=?  WHERE `userID`=? "; 
 
-    //use prepare function
-      $stmt = $con->prepare($sql);
-      $stmt->bind_param("sssssssi", $username, $email, $ort, $adresse, $lname, $fname, $plz, $userID );
+     $sql2= "UPDATE user SET username= ?,email=?,ort=?,adresse=?,lname=?,fname=?,plz=? WHERE userID=?";
+//echo $username , $email, $ort, $adresse, $lname, $fname, $plz, $userID;
+   //use prepare function
+//$sql= "UPDATE user SET username="test",email="test",ort="test",adresse="test",lname="test",fname="test",plz=000 WHERE userID=23";
 
-      $stmt->execute();
+mysqli_report(MYSQLI_REPORT_ALL);
+
+$stmt->close();
+      $stmt2 = $con->prepare($sql2);
+      
+      $stmt2->bind_param("sssssssi", $username, $email, $ort, $adresse, $lname, $fname, $plz, $userID );
+
+
+      //noch eine if ob stmt2 funktioniert
+
+      $stmt2->execute();
+      echo json_encode(array("statusCode"=>200));
             } 
      else {
         echo json_encode(array("statusCode"=>201));
@@ -54,7 +66,7 @@
   
   //close the statement
 
-  $stmt->close();
+  $stmt2->close();
   //close the connection
   $con->close();
 ?>    

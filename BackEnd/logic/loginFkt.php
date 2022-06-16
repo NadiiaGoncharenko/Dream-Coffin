@@ -1,4 +1,10 @@
 <?php
+
+//if || $_COOKIE[//frag hier ,ob gesetzt sind]  mach hier Abfrage und setz nochmal das in Session
+    //pw frag bei admin für update
+
+    if (){}
+
     include '../config/db.php';
 	$username = $_POST['username'];
 	
@@ -48,10 +54,15 @@
             $stmt->fetch();
 
             //set Session
-            if(!empty($passwordDB) && password_verify($password, $passwordDB)){
+
+
+
+            if(!empty($passwordDB) && password_verify($password, $passwordDB) ){
                 $_SESSION["userID"] = $userID;
                 $_SESSION["username"] = $username;
                 $_SESSION["roleID"] = $roleID;
+
+
 
                 if ("safe"){
                 //coockies 
@@ -59,6 +70,7 @@
                     setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
                     setcookie("username", $_POST['username'], time() + $logincookieduration);
                     setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
+                    //roleID dazu
                 }
                 //close the statement
                 $stmt->close();

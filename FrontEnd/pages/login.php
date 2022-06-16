@@ -13,7 +13,7 @@
     include '../webstructure/menuleiste.php';
 ?>
 
-<div style="background-image: url('../res/img/background.jpg'); padding-bottom:1%">
+<div  style="background-image: url('../res/img/background.jpg'); padding: bottom 5px;  margin: auto;">
     <br> 
     <?php $loginErr = ""; ?>
     <div class="container">
