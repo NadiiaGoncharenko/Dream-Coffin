@@ -7,11 +7,11 @@
         // true, cookie is set
         echo 'User is ' . $_COOKIE['user'];
 
-        $_SESSION["userID"] = $userID;
-                $_SESSION["username"] = $username;
-                $_SESSION["roleID"] = $roleID;
+        $_COOKIE["userID"] = $userID;
+        $_COOKIE["username"] = $username;
+        $_COOKIE["roleID"] = $roleID;
 
-                echo "success";
+        echo "success";
     }
    
     include '../config/db.php';
@@ -77,8 +77,8 @@
                 //coockies 
                     $logincookieduration = 31536000; //valid for 1 year
                     setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
-                    setcookie("username", $_POST['username'], time() + $logincookieduration);
-                    setcookie("roleID", $_POST['roleID'], time() + $logincookieduration);
+                    setcookie("username", $_SESSION['username'], time() + $logincookieduration);
+                    setcookie("roleID", $_SESSION['roleID'], time() + $logincookieduration);
                     setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
                 }
                 //close the statement
