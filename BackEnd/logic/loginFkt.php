@@ -3,6 +3,16 @@
 //if || $_COOKIE[//frag hier ,ob gesetzt sind]  mach hier Abfrage und setz nochmal das in Session
     //pw frag bei admin für update
 
+    if (isset($_COOKIE['user'])) {
+        // true, cookie is set
+        echo 'User is ' . $_COOKIE['user'];
+
+        $_SESSION["userID"] = $userID;
+                $_SESSION["username"] = $username;
+                $_SESSION["roleID"] = $roleID;
+
+                echo "success";
+    }
    
     include '../config/db.php';
 	$username = $_POST['username'];
