@@ -3,8 +3,7 @@
 //if || $_COOKIE[//frag hier ,ob gesetzt sind]  mach hier Abfrage und setz nochmal das in Session
     //pw frag bei admin für update
 
-    if (){}
-
+   
     include '../config/db.php';
 	$username = $_POST['username'];
 	
@@ -69,8 +68,8 @@
                     $logincookieduration = 31536000; //valid for 1 year
                     setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
                     setcookie("username", $_POST['username'], time() + $logincookieduration);
+                    setcookie("roleID", $_POST['roleID'], time() + $logincookieduration);
                     setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
-                    //roleID dazu
                 }
                 //close the statement
                 $stmt->close();
