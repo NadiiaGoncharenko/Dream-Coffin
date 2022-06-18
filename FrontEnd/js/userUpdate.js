@@ -20,6 +20,7 @@ $(document).ready(function() {
             var adresse = button.data('adresse');
 			var password = button.data('password');
             var username = button.data('username');
+			var active = button.data('active');
 			var modal = $(this);
 			modal.find('#username_modal').val(username);
 			modal.find('#lname_modal').val(lname);
@@ -30,12 +31,12 @@ $(document).ready(function() {
             modal.find('#ort_modal').val(ort);
 			modal.find('#password').val(password);
             modal.find('#userID_modal').val(userID);
-            
+            modal.find('#active_modal').val(active);
 		});
     });
 	$(document).on("click", "#update_data", function() { 
 		$.ajax({
-			url: "http://localhost/Dream-Coffin/BackEnd/logic/update.php",
+			url: "http://localhost/Dream-Coffin/BackEnd/logic/update_admin.php",
 			type: "POST",
 			cache: false,
 			data:{
@@ -47,7 +48,8 @@ $(document).ready(function() {
 				plz: $('#plz_modal').val(),
 				adresse: $('#adresse_modal').val(),
 				userID:$('#userID_modal').val(),
-				password: $('#password').val()
+				password: $('#password').val(),
+				active: $('#active').val()
 			},
 			success: function(dataResult){
 			//	var dataResult = JSON.parse(dataResult);
