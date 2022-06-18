@@ -1,6 +1,16 @@
 <?php
     if(session_status() == PHP_SESSION_NONE){
         session_start();
+
+        if (isset($_COOKIE['user'])) {
+            // true, cookie is set
+            echo 'User is ' . $_COOKIE['user'];
+    
+            $_COOKIE["userID"] = $userID;
+            $_COOKIE["username"] = $username;
+            $_COOKIE["roleID"] = $roleID;
+    
+        }
     }    
 ?>
 <div class="container-flex">
@@ -67,8 +77,8 @@
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/editData.php?userID=<?php echo $_SESSION["userID"];?>">Edit Profile</a>
                            <!-- //userID übergabe aus DB -->
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/all_orders_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Orders</a>
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/all_invoices_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Invoices</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/orders/all_orders_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Orders</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoice/all_invoices_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Invoices</a>
                                                        
                         </div>
                     </li>
