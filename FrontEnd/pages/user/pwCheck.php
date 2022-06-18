@@ -58,7 +58,6 @@ $(document).ready(function() {
 				userID:$('#userID_modal').val(),
 			},
 			success: function(dataResult){
-			//	var dataResult = JSON.parse(dataResult);
 				if(dataResult.statusCode==200){
 					$('#pw_check').modal().hide();
 					alert('You may update Data!');
