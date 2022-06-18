@@ -16,14 +16,12 @@ $(document).ready(function() {
 					// var dataResult = JSON.parse(dataResult);
 					console.log("loginFkt", dataResult);
 					if(dataResult == "success"){
-
 						console.log("login_drin");
 						location.href = "http://localhost/Dream-Coffin/FrontEnd/pages/index.php";						
 					}
-					else if(dataResult.statusCode==201){
-						$("#error").show();
-						$('#error').html('Invalid Username or Password !');
-					}
+					else if(dataResult == "error"){
+						location.href = "http://localhost/Dream-Coffin/FrontEnd/pages/error.php";
+						}
 					
 				}
 			});
