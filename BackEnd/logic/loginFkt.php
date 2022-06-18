@@ -50,7 +50,7 @@
             $username = test_input($username);
             $password = htmlspecialchars($password);
             
-            $sql = "SELECT `password`, `userID`, `roleID` FROM `user` WHERE `username` = ?";
+            $sql = "SELECT `password`, `userID`, `roleID` FROM `user` WHERE `username` = ? AND `active`= 1";
 
             //use prepare function
             $stmt = mysqli_prepare($con, $sql);
@@ -84,11 +84,11 @@
                 //close the statement
                 $stmt->close();
             }else{
-                $loginErr = "Username or Password was not correct";
+                $loginErr = "Username or Password was not correct <br> Or your account was deactivated";
             }
             
             if ($loginErr){
-            echo $loginErr;
+            echo "error";
         } 
         else{
             echo "success";
