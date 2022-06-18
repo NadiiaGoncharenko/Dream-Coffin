@@ -15,7 +15,7 @@
     
     //execute statement
     $stmt->execute();
-    $stmt->bind_result( $userID,$username, $password,$email,$plz, $adresse,$salutation,  $lname, $fname, $ort, $roleID);
+    $stmt->bind_result( $userID,$username, $password,$email,$plz, $adresse,$salutation, $lname, $fname, $ort, $roleID, $active);
     
     $row = $stmt->fetch();
 

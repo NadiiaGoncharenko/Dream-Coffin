@@ -13,6 +13,7 @@
 			<td><?=$row['email'];?></td>
 			<td><?=$row['ort'];?></td>
             <td><?=$row['plz'];?></td>
+			<td><?=$row['active'];?></td>
 			<td><button type="button" class="btn btn-success btn-sm update" 
             data-toggle="modal" data-keyboard="false" data-backdrop="static" data-target="#update_country"
             data-userID="<?=$row['userID'];?>"
@@ -24,6 +25,7 @@
 			data-email="<?=$row['email'];?>"
 			data-ort="<?=$row['ort'];?>"
             data-plz="<?=$row['plz'];?>"
+			data-active="<?=$row['active'];?>"
 			">Edit</button></td>
 		</tr>
 <?php	
