@@ -38,12 +38,11 @@
    if(password_verify($password, $passwordDB)){
     // echo json_encode(array("statusCode"=>200));
      
- // var_dump($_POST);
      // $sql = "UPDATE `user` SET `username`=?,`email`=?,`ort`=?,`adresse`=?,`lname`=?,`fname`=?,`plz`=?  WHERE `userID`=? "; 
-
+//use prepare function
      $sql2= "UPDATE user SET username= ?,email=?,ort=?,adresse=?,lname=?,fname=?,plz=? WHERE userID=?";
 //echo $username , $email, $ort, $adresse, $lname, $fname, $plz, $userID;
-   //use prepare function
+   
 //$sql= "UPDATE user SET username="test",email="test",ort="test",adresse="test",lname="test",fname="test",plz=000 WHERE userID=23";
 
 mysqli_report(MYSQLI_REPORT_ALL);
@@ -52,7 +51,6 @@ $stmt->close();
       $stmt2 = $con->prepare($sql2);
       
       $stmt2->bind_param("sssssssi", $username, $email, $ort, $adresse, $lname, $fname, $plz, $userID );
-
 
       //noch eine if ob stmt2 funktioniert
 
