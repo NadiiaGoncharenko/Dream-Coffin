@@ -5,7 +5,7 @@ $("#butsave").attr("disabled", "disabled");
 var username = $('#username').val();
 var email = $('#email').val();
 var password = $('#password').val();
-console.log("password");
+// console.log("password");
 var plz = $('#plz').val();
 var ort = $('#ort').val();
 var adresse = $('#adresse').val();
@@ -14,8 +14,8 @@ var fname = $('#fname').val();
 var salutation = $('#salutation').val();
 if(username!="" && email!="" && password!="" ){
 	
-	console.log($)
-	console.log($.ajax)
+	// console.log($)
+	// console.log($.ajax)
 
 	$.ajax({
 		url: "http://localhost/Dream-Coffin/BackEnd/logic/save.php",
@@ -33,13 +33,9 @@ if(username!="" && email!="" && password!="" ){
 		},
 		cache: false,
 		success: function(dataResult){
-			console.log(dataResult);
-			// var dataResult = JSON.parse(dataResult);
-			if(dataResult.statusCode==200){
-				$("#butsave").removeAttr("disabled");
-				$('#fupForm').find('input:text').val('');
-				$("#success").show();
-				$('#success').html('welcome 2m under the earth!'); 						
+			if(dataResult == "success"){
+				console.log("data_drin");
+				location.href = "http://localhost/Dream-Coffin/FrontEnd/pages/index.php";					
 			}
 			else if(dataResult.statusCode==201){
 				alert("Error occured !");
