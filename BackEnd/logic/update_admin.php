@@ -5,7 +5,7 @@
   //connection with DB
   include '../config/db.php';
 
-    $password = $_POST['password'];
+    // $password = $_POST['password'];
     $username=$_POST['username'];
 	$fname=$_POST['fname'];	
 	$lname=$_POST['lname'];

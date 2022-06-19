@@ -27,6 +27,7 @@ if(session_status() == PHP_SESSION_NONE){
         <th>PLZ</th>
 		<th>Activated</th>
         <th>Action</th>
+		<th>Orders</th>
       </tr>
     </thead>
     <tbody id="table">
@@ -126,19 +127,7 @@ if(session_status() == PHP_SESSION_NONE){
 						<input type="text" name="active_modal" id="active_modal" class="form-control-sm" >
 					</div>	
 				</div>
-				<!-- password check -->
-				<!--9-->
-                <div class="row">
-
-				</div>	
-					<h9 class= "col-med-7"> <br>*no password = no update*</h9>
 				
-					<div class="col-md-3">
-					    <label>Password</label>
-					</div>
-					<div class="col-md-9">
-						<input type="text" name="password" id="password" placeholder="****" class="form-control-sm" >
-					</div>
 
 				<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">
 			</div>
