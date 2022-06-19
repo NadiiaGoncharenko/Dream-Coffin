@@ -25,6 +25,7 @@ if(session_status() == PHP_SESSION_NONE){
         <th>Email</th>
 	    <th>Ort</th>
         <th>PLZ</th>
+		<th>Activated</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -115,9 +116,18 @@ if(session_status() == PHP_SESSION_NONE){
 						<input type="text" name="plz_modal" id="plz_modal" class="form-control-sm" >
 					</div>	
 				</div>
-
+				<!--8-->
+				<div class="row">
+				<h9 class= "col-med-7"> <br>*1 = active, 2 = inactive*</h9>
+					<div class="col-md-3">
+					    <label>Activated</label>
+					</div>
+					<div class="col-md-9">
+						<input type="text" name="active_modal" id="active_modal" class="form-control-sm" >
+					</div>	
+				</div>
 				<!-- password check -->
-				<!--7-->
+				<!--9-->
                 <div class="row">
 
 				</div>	

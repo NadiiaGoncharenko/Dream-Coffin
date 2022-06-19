@@ -70,14 +70,14 @@
                 $_SESSION["userID"] = $userID;
                 $_SESSION["username"] = $username;
                 $_SESSION["roleID"] = $roleID;
-
-
+                $_SESSION["password"] = $password;
 
                 if ("safe"){
                 //coockies 
                     $logincookieduration = 31536000; //valid for 1 year
                     setcookie("userID", $_SESSION['userID'], time() + $logincookieduration);
                     setcookie("username", $_SESSION['username'], time() + $logincookieduration);
+                    setcookie("password", $_SESSION['password'], time() + $logincookieduration);
                     setcookie("roleID", $_SESSION['roleID'], time() + $logincookieduration);
                     setcookie("logincookie", $logincookieduration, time() + $logincookieduration);
                 }

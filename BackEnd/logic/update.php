@@ -52,6 +52,7 @@ $stmt->close();
       
       $stmt2->bind_param("sssssssi", $username, $email, $ort, $adresse, $lname, $fname, $plz, $userID );
 
+
       //noch eine if ob stmt2 funktioniert
 
       $stmt2->execute();

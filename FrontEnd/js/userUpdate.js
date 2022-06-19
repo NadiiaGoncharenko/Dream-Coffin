@@ -49,11 +49,14 @@ $(document).ready(function() {
 				adresse: $('#adresse_modal').val(),
 				userID:$('#userID_modal').val(),
 				password: $('#password').val(),
-				active: $('#active').val()
+				active: $('#active_modal').val()
 			},
 			success: function(dataResult){
 			//	var dataResult = JSON.parse(dataResult);
-				if(dataResult.statusCode==200){
+			 console.log(dataResult);
+			 
+			if(dataResult.trim() == "success"){
+				// console.log("hihihi", dataResult);
 					$('#update_country').modal().hide();
 					alert('Data updated successfully !');
 					location.reload();					

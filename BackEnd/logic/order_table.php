@@ -6,15 +6,18 @@
       }
   //Abfrage der eigene, gespeicherten Daten in der DB
   if (isset($_SESSION["userID"]) && !empty($_SESSION["userID"])) {
- 	$sql = "SELECT order.orderid, order.date, order.sum FROM order";
-     
+ 	$sql = "SELECT * FROM `order`";
+    
     //use prepare function
-    $stmt = mysqli_prepare($con, $sql);
-var_dump($stmt);
-    $stmt->execute();
-    $stmt ->bind_result($orderid, $sum, $date);
+//     $stmt = mysqli_prepare($con, $sql);
 
-    while ($stmt->fetch()) {
+// // 
+//     $stmt->execute();
+$stmt=$con->query($sql);
+    // $stmt ->bind_result($orderid, $sum, $date);
+var_dump($stmt);
+    if ($stmt->num_rows > 0) {
+		while($row = $stmt->fetch_assoc()) {
     ?>	
 		<tr>
 			<td><?=$row['orderid'];?></td>
@@ -28,7 +31,7 @@ var_dump($stmt);
 			">List of products</button></td>
 		</tr>
 <?php	
-	 
+        }
 	 }
     }
 	// else {

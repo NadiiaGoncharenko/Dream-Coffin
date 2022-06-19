@@ -2,17 +2,21 @@
     if(session_status() == PHP_SESSION_NONE){
         session_start();
 
-        if (isset($_COOKIE['user'])) {
-            // true, cookie is set
-            echo 'User is ' . $_COOKIE['user'];
+
+                // if (isset($_COOKIE['user'])) {
+        //     // true, cookie is set
+        //     echo 'User is ' . $_COOKIE['user'];
     
-            $_COOKIE["userID"] = $userID;
-            $_COOKIE["username"] = $username;
-            $_COOKIE["roleID"] = $roleID;
+        //     $_COOKIE["userID"] = $userID;
+        //     $_COOKIE["username"] = $username;
+        //     $_COOKIE["roleID"] = $roleID;
     
-        }
+        // }
     }    
 ?>
+
+
+
 <div class="container-flex">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #98c0dd;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
