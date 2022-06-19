@@ -65,6 +65,7 @@
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/products/edit_products.php">Edit products</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/products/all_products.php">All products</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/orders/all_orders_user.php">All orders</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoices/invoices.php">All invoices</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoices/invoice_detail.php">Invoice</a>
                         </div>
@@ -81,7 +82,7 @@
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/editData.php?userID=<?php echo $_SESSION["userID"];?>">Edit Profile</a>
                            <!-- //userID übergabe aus DB -->
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/orders/all_orders_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Orders</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/orders/orders_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Orders</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoice/all_invoices_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Invoices</a>
                                                        
                         </div>

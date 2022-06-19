@@ -6,13 +6,13 @@ if(session_status() == PHP_SESSION_NONE){
     include '../../webstructure/menuleiste.php';
    
      ?>
-   <script src="http://localhost/Dream-Coffin/FrontEnd/js/orders.js"></script>
-<title>All orders</title>
+   <script src="http://localhost/Dream-Coffin/FrontEnd/js/orders_user.js"></script>
+<title>My orders</title>
   
 </head>
 <body>
 <div class="container text-center">
-  <h2 id = "heading-1">All orders</h2>
+  <h2 id = "heading-1">My orders</h2>
   <div class="alert alert-success alert-dismissible" id="success" style="display:none;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 	</div>
@@ -26,7 +26,7 @@ if(session_status() == PHP_SESSION_NONE){
         <th>UserID</th>
       </tr>
     </thead>
-    <tbody id="tableOrder">
+    <tbody id="tableOrderUser">
       
     </tbody>
   </table>
@@ -45,7 +45,7 @@ if(session_status() == PHP_SESSION_NONE){
         <th>List of products</th>
       </tr>
     </thead>
-    <tbody id="tableList">
+    <tbody id="tableListUser">
       
 				<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">
 			<button type="button" class="btn btn-default btn-sm" data-dismiss="modal" style="background-color: #e35f14;color:#fff;">Close</button></p>
