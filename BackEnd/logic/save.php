@@ -2,13 +2,13 @@
 	include '../config/db.php';
 	$username=$_POST['username'];
 	$email=$_POST['email'];
-	var_dump("save.php works");
+	// var_dump("save.php works");
 	$password = $_POST["password"];
-	var_dump($password);
+	// var_dump($password);
 
 	$password = htmlspecialchars($password);
 	$password = password_hash($password, PASSWORD_DEFAULT); 
-	var_dump($password);
+	// var_dump($password);
 
 	$ort=$_POST['ort'];
 	$adresse=$_POST['adresse'];
@@ -19,8 +19,7 @@
 	$sql = "INSERT INTO `user`( `username`, `email`, `password`, `ort`, `adresse`, `lname`, `fname`, `salutation`,`plz` ) 
 	VALUES ('$username','$email','$password', '$ort', '$adresse', '$lname', '$fname',  '$salutation', '$plz')";
 	if (mysqli_query($con, $sql)) {
-		echo json_encode(array("statusCode"=>200));
-		echo "Congratulation!";
+		echo "success";
 	} 
 	else {
 		echo json_encode(array("statusCode"=>201));
