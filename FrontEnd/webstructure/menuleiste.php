@@ -1,22 +1,8 @@
 <?php
     if(session_status() == PHP_SESSION_NONE){
         session_start();
-
-
-                // if (isset($_COOKIE['user'])) {
-        //     // true, cookie is set
-        //     echo 'User is ' . $_COOKIE['user'];
-    
-        //     $_COOKIE["userID"] = $userID;
-        //     $_COOKIE["username"] = $username;
-        //     $_COOKIE["roleID"] = $roleID;
-    
-        // }
     }    
 ?>
-
-
-
 <div class="container-flex">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #98c0dd;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,8 +20,9 @@
                     <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/helpsite.php">Help</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/warenkorb.php">Warenkorb</a>
+                    <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/warenkorb.php">My Shopping Cart</a>
                 </li>
+               
                 <?php if(!isset($_SESSION["userID"])): ?>
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost/Dream-Coffin/FrontEnd/pages/registration_form.php">Registration</a>
@@ -64,8 +51,9 @@
                         </a>
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/products/edit_products.php">Edit products</a>
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/products/all_products.php">All products</a>
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/orders/all_orders_user.php">All orders</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/all_products.php">All products</a>
+                            
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/all_orders_user.php">All orders</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoices/invoices.php">All invoices</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoices/invoice_detail.php">Invoice</a>
                         </div>
@@ -82,8 +70,10 @@
                         <div class="dropdown-menu" style="background-color: #c2d3df;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/editData.php?userID=<?php echo $_SESSION["userID"];?>">Edit Profile</a>
                            <!-- //userID übergabe aus DB -->
+                           
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/all_orders.php?userID=<?php echo $_SESSION["userID"];?>">My orders</a>
                             <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/orders/orders_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Orders</a>
-                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/invoice/all_invoices_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Invoices</a>
+                            <a class="dropdown-item" href="http://localhost/Dream-Coffin/FrontEnd/pages/user/all_invoices_user.php?userID=<?php echo $_SESSION["userID"];?>">Your Invoices</a>
                                                        
                         </div>
                     </li>
@@ -119,6 +109,7 @@
             </ul>
         </div>
     </nav>
+    <div id="korb-count">Number of products: <?php echo (isset($_SESSION["korb_count"]) ? $_SESSION["korb_count"] : '0'); ?> </div>
 </div>
 <!-- <script>
 	showResult(); //für Suche

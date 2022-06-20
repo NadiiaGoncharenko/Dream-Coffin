@@ -132,11 +132,11 @@ if(session_status() == PHP_SESSION_NONE){
 				<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">
 			</div>
 			<div class="modal-footer" style="padding-bottom:0px !important;text-align:center !important;">
-			<p style="text-align:center;float:center;">
-			<button type="submit" id="update_data" class="btn btn-default btn-sm" style="background-color: #e35f14;color:#fff;">Save</button>
-			<button type="button" class="btn btn-default btn-sm" data-dismiss="modal" style="background-color: #e35f14;color:#fff;">Close</button></p>
+				<p style="text-align:center;float:center;">
+				<button type="submit" id="update_data" class="btn btn-default btn-sm" style="background-color: #e35f14;color:#fff;">Save</button>
+				<button type="button" class="btn btn-default btn-sm" data-dismiss="modal" style="background-color: #e35f14;color:#fff;">Close</button></p>
 			
-		  </div>
+		  	</div>
 		  </div>
 		</div>
 	</div>

@@ -16,6 +16,7 @@ $(document).ready(function() {
             var price = button.data('price');
 			var quantity = button.data('emaiquantityl');
             var ort = button.data('ort');
+			var zeit = button.data('zeit');
             var plz = button.data('plz');
             var adresse = button.data('adresse');
 			var password = button.data('password');

@@ -15,7 +15,7 @@ $(document).ready(function() {
 			var order_name = button.data('order_name');
             var price = button.data('price');
 			var quantity = button.data('emaiquantityl');
-            var ort = button.data('ort');
+            var productID = button.data('productID');
             var plz = button.data('plz');
             var adresse = button.data('adresse');
 			var password = button.data('password');

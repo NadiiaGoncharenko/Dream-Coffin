@@ -22,14 +22,7 @@
      
     //use prepare function
      $sql2= "UPDATE user SET username= ?,email=?,ort=?,adresse=?,lname=?,fname=?,plz=?, active=? WHERE userID=?";
-        // echo $username , $email, $ort, $adresse, $lname, $fname, $plz, $userID;
-        //$sql= "UPDATE user SET username="test",email="test",ort="test",adresse="test",lname="test",fname="test",plz=000 WHERE userID=23";
-        // $sql = "UPDATE `user` SET `username`=?,`email`=?,`ort`=?,`adresse`=?,`lname`=?,`fname`=?,`plz`=?  WHERE `userID`=? "; 
-
-        // mysqli_report(MYSQLI_REPORT_ALL);
-
-        // $stmt->close();
-
+     
       $stmt2 = $con->prepare($sql2);
       
       $stmt2->bind_param("sssssssii", $username, $email, $ort, $adresse, $lname, $fname, $plz,$active, $userID  );

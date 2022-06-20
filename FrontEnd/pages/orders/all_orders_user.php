@@ -20,7 +20,7 @@ if(session_status() == PHP_SESSION_NONE){
     <thead style="background-color: #c2d3df;">
       <tr>
         <th>OrderID</th>
-        <th>Summ</th>
+        <!-- <th>Summ</th> -->
         <th>Date</th>
         <th>List of products</th>
         <th>UserID</th>
@@ -34,8 +34,8 @@ if(session_status() == PHP_SESSION_NONE){
 
 
 <!-- Modal Update-->
-    <div class="modal fade" id="products_in_order" role="dialog">
-		<div class="modal-dialog modal-sm">
+<div class="modal fade" id="products_in_order" role="dialog">
+	<div class="modal-dialog modal-sm">
 		<table class="table table-bordered table-sm" >
     <thead style="background-color: #c2d3df;">
       <tr>
@@ -47,15 +47,23 @@ if(session_status() == PHP_SESSION_NONE){
     </thead>
     <tbody id="tableList">
       
-				<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">
-			<button type="button" class="btn btn-default btn-sm" data-dismiss="modal" style="background-color: #e35f14;color:#fff;">Close</button></p>
+		
     </tbody>
   </table>
-	
+  <div>
+			<input type="hidden" name="userID_modal" id="userID_modal" class="form-control-sm">
+      
+      </div>
+			<div class="modal-footer" style="padding-bottom:0px !important;text-align:center !important;">
+				<p style="text-align:center;float:center;">
+				<button type="submit" id="update_data" class="btn btn-default btn-sm" style="background-color: #e35f14;color:#fff;">Save</button>
+				<button type="button" class="btn btn-default btn-sm" data-dismiss="modal" style="background-color: #e35f14;color:#fff;">Close</button></p>
+			
+		  	</div>
 		  </div>
 		  </div>
-		</div>
 	</div>
+</div>
 <!-- Modal End-->
 
 

@@ -6,7 +6,7 @@
       }
   //Abfrage der eigene, gespeicherten Daten in der DB
   if (isset($_SESSION["userID"]) && !empty($_SESSION["userID"])) {
- 	$sql = "SELECT * FROM `order`";
+ 	$sql = "SELECT * FROM `orders`";
     
     //use prepare function
 //     $stmt = mysqli_prepare($con, $sql);
@@ -21,14 +21,15 @@ var_dump($stmt);
     ?>	
 		<tr>
 			<td><?=$row['orderid'];?></td>
-            <td><?=$row['sum'];?></td>
-            <td><?=$row['date'];?></td>
+            
+            <td><?=$row['zeit'];?></td>
 			<td><button type="button" class="btn btn-success btn-sm show" 
             data-toggle="modal" data-keyboard="false" data-backdrop="static" data-target="#products_in_order"
             data-orderID="<?=$row['orderid'];?>"
-			data-date="<?=$row['date'];?>"
-            data-sum="<?=$row['sum'];?>"
+			data-date="<?=$row['zeit'];?>"
+           
 			">List of products</button></td>
+            <td><?=$row['userID'];?></td>
 		</tr>
 <?php	
         }
