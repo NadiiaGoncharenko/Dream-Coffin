@@ -3,10 +3,9 @@
 $msg = '';
 
 //include '../config/db.php';
-
 $servername = "localhost";
-$username = "examuser";
-$password = "m5912yBw864tK72W79";
+$username = "weben";
+$password = "weben";
 $db_name = "dreamcoffin";
 
 // Create connection

@@ -2,16 +2,15 @@
 // Prepare empty message variable
 $msg = '';
 
-include '../config/db.php';
+//include '../config/db.php';
 
-// $servername = "localhost";
-// $username = "weben";
-// $password = "weben";
-// $db_name = "dreamcoffin";
+$servername = "localhost";
+$username = "weben";
+$password = "weben";
+$db_name = "dreamcoffin";
 
-
-// // Create connection
-// $conn = new mysqli($servername, $username, $password, $db_name);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db_name);
 
 // Check connection
 //if ($conn->connect_error) {
@@ -22,7 +21,7 @@ include '../config/db.php';
 
 $category = $_POST['data'];
 
-if ($result = $con->query("SELECT * FROM products WHERE kategorie = '" . $category . "'")) {
+if ($result = $conn->query("SELECT * FROM products WHERE kategorie = '" . $category . "'")) {
     $result_array = array();
     while($row = $result->fetch_row()) {
         $result_array[] = $row;
