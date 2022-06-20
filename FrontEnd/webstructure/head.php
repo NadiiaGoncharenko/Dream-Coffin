@@ -15,5 +15,5 @@
 	<script src="http://localhost/Dream-Coffin/FrontEnd/js/loginAjax.js"></script>
 	<script src="http://localhost/Dream-Coffin/FrontEnd/js/logoutAjax.js"></script>
 	<script src="http://localhost/Dream-Coffin/FrontEnd/js/login_auto.js"></script>
-
+	<script src="http://localhost/Dream-Coffin/FrontEnd/js/productsAjax.js"></script>
 	

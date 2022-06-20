@@ -6,7 +6,6 @@
 <body>
   <?php
     include '../webstructure/menuleiste.php';
-   
   ?>
 
 <!--Hintergrund Bild-->
@@ -50,7 +49,6 @@
 </div>
 
 
+<?php include "all_products.php"; ?>
 
-
-    <?php  include "all_products.php"; ?>
     <?php include "../webstructure/footer.php"; ?>

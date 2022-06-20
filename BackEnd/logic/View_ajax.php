@@ -27,9 +27,9 @@
             data-plz="<?=$row['plz'];?>"
 			data-active="<?=$row['active'];?>"
 			">Edit</button></td>
+			
 
-
-			<td><button type="button" class="btn btn-success btn-sm update" onClick='window.location= "http://localhost/Dream-Coffin/FrontEnd/pages/orders/orders_user.php?userID=<?php echo $row['userID'];?>"'
+			<td><button type="button" class="btn btn-success btn-sm update" onClick='window.location= "http://localhost/Dream-Coffin/FrontEnd/pages/all_orders.php?userID=<?php echo $row['userID'];?>"'
 			">Orders</button></td>
 
 		</tr>
