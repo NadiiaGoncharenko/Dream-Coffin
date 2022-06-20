@@ -5,7 +5,7 @@ include "../config/db.php";
  
 if(isset($_REQUEST["term"])){
     // Prepare a select statement
-    $sql = "SELECT * FROM product WHERE product_name LIKE ?";
+    $sql = "SELECT * FROM products WHERE titel LIKE ?";
     $stmt = mysqli_prepare($con, $sql);
     if($stmt){
         // Bind variables to the prepared statement as parameters
@@ -22,7 +22,7 @@ if(isset($_REQUEST["term"])){
             if(mysqli_num_rows($result) > 0){
                 // Fetch result rows as an associative array
                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                    echo "<p>" . $row["product_name"] . "</p>";
+                    echo "<p>" . $row["titel"] . "</p>";
                 }
             } else{
                 echo "<p>No matches found</p>";
