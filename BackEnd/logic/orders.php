@@ -2,23 +2,10 @@
 // Prepare empty message variable
 $msg = '';
 
-//include '../config/db.php';
-$servername = "localhost";
-$username = "weben";
-$password = "weben";
-$db_name = "dreamcoffin";
-
-// Create connection
-$con = new mysqli($servername, $username, $password, $db_name);
-
-// Check connection
-//if ($conn->connect_error) {
-//die("Connection failed: " . $conn->connect_error);
-//}
-//echo "Connected successfully";
-
-
-session_start();
+include '../config/db.php';
+if(session_status() == PHP_SESSION_NONE){
+  session_start();
+}
 
 if (!isset($_SESSION['userID'])) {
   echo json_encode(array('error' => 1));

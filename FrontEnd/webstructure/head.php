@@ -9,6 +9,7 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="http://localhost/Dream-Coffin/FrontEnd/res/css/style.css">
 	<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+	<!-- custom Javascript -->
 	<script src="http://localhost/Dream-Coffin/FrontEnd/js/ajaxsuche.js"></script>
 	<script src="http://localhost/Dream-Coffin/FrontEnd/js/ajaxFkt.js"></script>
 	<script src="http://localhost/Dream-Coffin/FrontEnd/js/fkt.js"></script>
